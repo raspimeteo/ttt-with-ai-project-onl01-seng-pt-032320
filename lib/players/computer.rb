@@ -38,30 +38,27 @@ module Players
             # e. if no take any corner
             # random
             # a. make random move
-            # binding.pry
             if winning_move? != nil
                 input = winning_move? + 1
-                puts "winning_move = #{input}",""
+                # puts "winning_move = #{input}",""
             elsif block? != nil
                 input = block? + 1
-                puts "blocking move = #{input}",""
+                # puts "blocking move = #{input}",""
             elsif corners? != nil
                 input = corners? + 1
-                puts "corner move = #{input}",""
+                # puts "corner move = #{input}",""
             elsif center? != nil
-                # binding.pry
                 input = 5
-                puts "center move = #{input}",""
+                # puts "center move = #{input}",""
             else
                 until !@board.taken?(input)
                     input = (1..9).to_a.sample
-                    puts "random move = #{input}",""
+                    # puts "random move = #{input}",""
                 end
             end
             
             sleep(1)
             input.to_s
-            # binding.pry
             
         end  
         
@@ -85,11 +82,9 @@ module Players
                 @board.cells[block_combo[0]] == test_token && @board.cells[block_combo[2]] == test_token && @board.cells[block_combo[1]] == ' ' ||
                 @board.cells[block_combo[1]] == test_token && @board.cells[block_combo[2]] == test_token && @board.cells[block_combo[0]] == ' ')
             end
-            # binding.pry
             if blocking_line
                 blocking_cell = blocking_line.detect {|cell| @board.cells[cell] == ' '}
             end
-            # binding.pry
             blocking_cell
         end
 
@@ -109,21 +104,15 @@ module Players
                 move = 2
                 else
                     move = CORNERS.shuffle.find {|corner| @board.cells[corner] == " "}
-                    # binding.pry
             end
             move
-            # binding.pry
-
-                
         end
 
         def center?
             if !@board.taken?(5)
-                # binding.pry
                 return 5
             end
         end
-
 
     end
 

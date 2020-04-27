@@ -5,6 +5,7 @@ module Players
         def move(board)
             gets.strip
         end   
+        
     end
 
 end

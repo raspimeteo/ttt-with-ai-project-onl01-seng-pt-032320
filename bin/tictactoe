@@ -10,20 +10,19 @@ def start
     puts
     if input == '0'
         # binding.pry
-        Game.new(Player::Computer.new('X'), Player::Computer.new('O')).play
-        # binding.pry
-        loop_around
+        Game.new(Players::Computer.new('X'), Players::Computer.new('O')).play
+        play_again
     elsif input == '1'
-        Game.new(Player::Human.new('X'), Player::Computer.new('O')).play
-        loop_around
+        Game.new(Players::Human.new('X'), Players::Computer.new('O')).play
+        play_again
     elsif
-        Game.new(Player::Human.new('X'), Player::Human.new('O')).play
-        loop_around
+        Game.new(Players::Human.new('X'), Players::Human.new('O')).play
+        play_again
     end
 
     
     end
-    def loop_around
+    def play_again
         puts "Play again? ( y / n )",""
         input = gets.strip.downcase
         case input
@@ -32,8 +31,7 @@ def start
         when 'n'
             puts "See you next time at a game of TicTacToe!"
         else
-            loop_around
-    
+            play_again
     end
 end
 start
