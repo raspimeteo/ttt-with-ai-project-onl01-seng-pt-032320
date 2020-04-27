@@ -1,6 +1,6 @@
 module Players
 
-    class Player::Human < Player
+    class Human < Player
 
         def move(board)
             gets.strip
