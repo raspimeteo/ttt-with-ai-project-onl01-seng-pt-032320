@@ -2,7 +2,7 @@ module Players
 
     attr_accessor :board
 
-    class Computer < Player
+    class Player::Computer < Player
 
         WIN_COMBINATIONS = [
             [0, 1, 2],
