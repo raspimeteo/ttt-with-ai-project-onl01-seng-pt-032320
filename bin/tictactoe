@@ -10,14 +10,14 @@ def start
     puts
     if input == '0'
         # binding.pry
-        Game.new(Player::Computer.new('X'), Player::Computer.new('O')).play
+        Game.new(Computer.new('X'), Computer.new('O')).play
         # binding.pry
         loop_around
     elsif input == '1'
-        Game.new(Player::Human.new('X'), Player::Computer.new('O')).play
+        Game.new(Human.new('X'), Computer.new('O')).play
         loop_around
     elsif
-        Game.new(Player::Human.new('X'), Player::Human.new('O')).play
+        Game.new(Human.new('X'), Human.new('O')).play
         loop_around
     end
 
